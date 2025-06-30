@@ -6,7 +6,16 @@ JavaScript will be used for the linking and controlling the timer.
 
 I have attached a plan of my almost finished view of this project.
 
-Features:
+Version 1: Pomodoro Timer
+
+- Simple HTML & CSS design 
+- Simple JavaScript
+
+Version 2: + Todo List
+
+Version 3: + Spotify Player
+
+Feature Ideas:
 Pomodoro Timer
 Native Todo List 
     - Views 

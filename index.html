@@ -29,24 +29,25 @@
      <main>
 
         <!-- Timer -->
-        <div class="timer">
+        <section class="timer">
+        
             <!-- timer-labels change in JavaScript -->
-            <div class="timer-label">Focus Timer</div>
-            <div class="timer-label">Break Timer</div>
+             <div class="timer-labels">
+                <div class="timer-label">Break Timer</div>
+                <div class="timer-label">Focus Timer</div>
+             </div>
 
-            <div class="timer-display">25:00</div>
+            <!-- timer dispay needs to be updated through JavaScript -->
+            <div class="timer-display" id="timer">25:00</div>
 
-            <div class="timer__controls">
-                <button id="start-btn" class="btn">Start</button>
-                <button id="pause-btn" class="btn">Pause</button>
-                <button id="reset-btn" class="btn">Reset</button>
+            <!-- timer controls need to be linked to JavaScript functions -->
+            <div class="timer-controls">
+                <button id="start" class="btn">Start</button>
+                <button id="pause" class="btn">Pause</button>
+                <button id="reset" class="btn">Reset</button>
             </div>
-        </div>
+        </section>
 
-        <!-- Task -->
-         <div class="task">
-
-         </div>
 
      </main>
 

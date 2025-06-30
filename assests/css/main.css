@@ -1,32 +1,184 @@
 body {
     background-color: rgb(178, 253, 135);
-    display: flexbox;
-    margin: 5%;
+    display: flex;
+    margin: 10px 10px;
     font-family: Inconsolata, monospace;
 }
 
+/* Styling Header */
+
 header {
+    /* Layout & Positioning */
+    display: flex;
     flex-direction: row;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgb(0, 152, 240);
+    z-index: 1000;
+
+
+    /* Box Model */
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+.account-container {
+    /* Box Model */
+    margin: 5px;
+    padding: 5px 10px;
 
 }
 
+/* Styling Main */
 main {
-    flex-direction: row;
-    text-align: center;
-    padding: 40px;
-    margin: 50px;
+    /* Layout & Positioning */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10rem; /* To avoid overlap with fixed header */
+
+    /* Box Model */
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+
+
+    /* Appearance */
+    background-color: rgb(164, 234, 123);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
 }
+
+
+/* Styling Timer */
 
 .timer {
-    background-color: aquamarine;
-    padding: 15px 0px;
+    /* Layout & Positioning */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* Box Model */
+    margin: 2rem 0;
+    padding: 3rem;
+    width: 30%;
+    height: 70%;
+
+
+    /* Appearance */
+    background-color: #A7F3D0;
     border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.timer-labels {
+    /* Layout & Positioning */
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: flex-start;
+
+    
+    /* Box Model */
+    width: 100%;
+    height: 3rem;
+    margin-bottom: 1rem;
+    padding: 5px;
 }
 
 .timer-label {
-    padding: 5px;
-    margin: 5px;
+    /* Layout & Positioning */
+    position: absolute;
+    top: 0;
+    /* Box Model */
+    padding: 5px 20px;
+    
+
+    /* Appearance */
+    background: #fffbe7;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333; 
+}
+
+/* Bring one of the labels forward */
+.timer-label.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.timer-display {
+    /* Layout & Positioning */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    /* Box Model */
+    padding: 10px;
+    margin-bottom: 5px;
+
+    /* Apperance */
+    font-size: 3rem;
+    font-weight: 60%;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+    box-shadow: 0 2px 5px rgba(36, 34, 34, 0.1);
 
 }
+
+.timer-controls {
+    /* Layout & Positioning */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    /* Box Model */
+    padding: 5px;
+    margin-top: 1.5rem;
+
+}
+
+.btn {
+    /* Layout & Positioning */
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+
+    /* Box Model */
+    padding: 10px 20px;
+    border-radius: 5px;
+
+    /* Appearance */
+    background-color: #4f46e5;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #4338ca;
+}
+
+.btn:active {
+    background-color: #3730a3;
+}
+
+
+
+
