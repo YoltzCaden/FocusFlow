@@ -1,8 +1,7 @@
 # FocusFlow
-A simple Pomodoro Timer website using HTML, CSS and JavaScript
+A Pomodoro Timer website using HTML, CSS and JavaScript.
 
-HTML and CSS will be used for the visuals
-JavaScript will be used for the linking and controlling the timer.
+I'm using vanilla JavaScript for this project.
 
 I have attached a plan of my almost finished view of this project.
 

@@ -159,7 +159,7 @@ main {
     margin: 5px;
 
     /* Box Model */
-    padding: 10px 20px;
+    padding: 0.5rem 0.5rem;
     border-radius: 5px;
 
     /* Appearance */
