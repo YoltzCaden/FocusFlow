@@ -10,6 +10,14 @@ Version 1: Pomodoro Timer
 - Simple HTML & CSS design 
 - Simple JavaScript
 
+The pomodoro timer goes through 4 Focus mode session which last 25 mins each, 
+and a 5 min break between each session.
+After the 4 sessions are over you get a long 45 mins break.
+This continues until you stop the timer.
+
+There will be a functionality that will allow you to edit the time frame to your suitable liking, but currently it is fixed in the code.
+
+
 Version 2: + Todo List
 
 Version 3: + Spotify Player

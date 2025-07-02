@@ -80,7 +80,7 @@ main {
 
 }
 
-.timer-labels {
+.timer-label-container {
     /* Layout & Positioning */
     display: flex;
     position: relative;
@@ -110,12 +110,6 @@ main {
     font-size: 1.5rem;
     font-weight: bold;
     color: #333; 
-}
-
-/* Bring one of the labels forward */
-.timer-label.active {
-    opacity: 1;
-    z-index: 1;
 }
 
 .timer-display {
