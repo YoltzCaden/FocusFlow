@@ -1,13 +1,14 @@
 const start = document.getElementById("start");
-const stop = document.getElementById("stop");
+const pause = document.getElementById("pause");
 const reset = document.getElementById("reset");
-const focus_timer = 10; // Time in seconds
-const break_timer = 15; //Short breaks - 5 minutes;
-const long_break_timer = 20; // Longer breaks - 45 minutes;
+let focus_timer = 1500; // Time in seconds
+let break_timer = 300; //Short breaks - 5 minutes;
+let long_break_timer = 1800; // Longer breaks - 45 minutes;
 let remaining_time = focus_timer + 1;  // helps make sure the Timer starts that required time.
 let timer_running = false; 
 let currentMode = 'focus';
 let focusSessionsCompleted = 0;
+let intervalID = null; 
 
 
 // Timer Functionality
@@ -52,6 +53,13 @@ countDownTimer = function() {
         if (remaining_time <= 0) {
             if (currentMode == 'focus') {
                 focusSessionsCompleted += 1;
+
+                /*
+                * 
+                * TODO: Change logic so only when requested session breaks
+                *       Then do this checks.
+                */
+                
                 if (focusSessionsCompleted % 4 == 0) {
                     remaining_time = long_break_timer;
                     currentMode = 'break';
@@ -61,6 +69,7 @@ countDownTimer = function() {
                     currentMode = 'break';
                     document.getElementById("timer-label").textContent = "Break Timer";
                 }
+
             } else if (currentMode == 'break') {
                 remaining_time = focus_timer;
                 currentMode = 'focus';
@@ -82,7 +91,7 @@ countDownTimer = function() {
 
 startClick = function() {
     if (timer_running == false) {
-        setInterval(countDownTimer, 1001);
+        intervalID = setInterval(countDownTimer, 1000);
     }
     
 
@@ -91,10 +100,41 @@ startClick = function() {
 start.addEventListener('click', startClick);
 
 //Stop
-stopClick = function() {
-    clearInterval;
-    timer_running = false;
+
+/*
+*
+* I learnt the clearInterval method here.
+* Made changes to code such as intervalID variale.
+*/
+
+pauseClick = function() {
+    if (timer_running == true) {
+        clearInterval(intervalID);
+        timer_running = false;
+    }
+    
+    
 }
+
+pause.addEventListener('click', pauseClick);
 
 //Reset
 
+/*
+* When I click reset:
+* 1. Timer stops
+* 2. Timer is set to the original time setting. 
+*
+*
+*/
+resetClick = function() {
+    pauseClick();
+    remaining_time = focus_timer + 1;
+    currentMode = 'focus';
+    document.getElementById("timer-label").textContent = "Focus Timer";
+    countDownTimer();
+    timer_running = false;
+    
+}
+
+reset.addEventListener('click', resetClick);

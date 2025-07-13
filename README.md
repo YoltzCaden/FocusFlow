@@ -1,41 +1,22 @@
-# FocusFlow
-A Pomodoro Timer website using HTML, CSS and JavaScript.
+FocusFlow is a Pomodoro Timer web application built with HTML, CSS, and vanilla JavaScript. I'm using this project to learn JavaScript and improve my web development skills. The app helps boost productivity by breaking work into focused intervals, separated by short breaks.
 
-I'm using vanilla JavaScript for this project.
+## Features
 
-I have attached a plan of my almost finished view of this project.
+- Simple and intuitive Pomodoro timer
+- Customizable work and break durations
+- Responsive design for desktop and mobile
+- No frameworks or libraries—pure JavaScript
 
-Version 1: Pomodoro Timer
+## Getting Started
 
-- Simple HTML & CSS design 
-- Simple JavaScript
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/yourusername/FocusFlow.git
+    ```
+2. Open `index.html` in your browser.
 
-The pomodoro timer goes through 4 Focus mode session which last 25 mins each, 
-and a 5 min break between each session.
-After the 4 sessions are over you get a long 45 mins break.
-This continues until you stop the timer.
+## Project Status
 
-There will be a functionality that will allow you to edit the time frame to your suitable liking, but currently it is fixed in the code.
-
-
-Version 2: + Todo List
-
-Version 3: + Spotify Player
-
-Feature Ideas:
-Pomodoro Timer
-Native Todo List 
-    - Views 
-        - List 
-        - Board
-    - Sort
-    - Labels
-    - Music
-
-Music Integration
-- Links to user's Spotify and play study Lofi Beats
-
-Activity Centre
-- Tracks Pomodoro sessions and provides insight on focused time.
+This is a beginner project for learning JavaScript. The core functionality is nearly complete, and a visual plan of the final design is included in the repository.
 
 
