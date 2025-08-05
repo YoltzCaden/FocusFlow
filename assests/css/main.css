@@ -21,20 +21,37 @@ header {
 
 
     /* Box Model */
-    padding: 10px;
+    padding: 10px 20px;
     width: 100%;
     box-sizing: border-box;
+}
+
+.logo-container { 
+    /* Layout & Positioning */
+    display: flex;
+    align-items: center;
+
+    /* Box Model */
+    padding: 5px;
 }
 
 
 .account-container {
     /* Box Model */
     margin: 5px;
-    padding: 5px 10px;
+    padding: 10px 10px;
 
 }
 
-/* Styling Main */
+.account-info img {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+}
+
+.account-info:hover {
+    cursor: pointer;
+}
 main {
     /* Layout & Positioning */
     display: flex;
@@ -79,6 +96,38 @@ main {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 
 }
+
+.settings-cog-container {
+    /* Layout & Positioning */
+    display: flex;
+    align-items: right;
+    justify-content: right;
+    position: absolute;
+
+    /* Box Model */
+    padding: 5px;
+}
+
+.settings-cog {
+    width: 28px;         /* Set desired button size */
+    height: 28px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.settings-cog img {
+    width: 20px;         /* Set desired icon size */
+    height: 20px;
+    object-fit: contain;
+    display: block;
+}
+
 
 .timer-label-container {
     /* Layout & Positioning */
@@ -167,12 +216,10 @@ main {
 
 .btn:hover {
     background-color: #4338ca;
+    cursor: pointer;
 }
 
 .btn:active {
     background-color: #3730a3;
 }
-
-
-
 

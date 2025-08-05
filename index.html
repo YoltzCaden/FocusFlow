@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FocusFlow</title>
     <link rel="stylesheet" href="assests/css/main.css">
+    <link rel="images" href="assests/images/account.png">
+    <link rel="images" href="assests/images/favicon.png">
 </head>
 <body>
     <!-- Header -->
      <header>
         <div class="logo-container">
-            <img src="logo.png" alt="FocusFlow Logo" class="logo">
+           <!-- <img src="assests/images/favicon.png" alt="FocusFlow Logo" class="logo"> -->
         </div>
         <div class="title-container">
             <h1>FocusFlow</h1>
@@ -19,7 +21,7 @@
 
         <div class="account-container">
             <div class="account-info">
-                <p>Account</p>
+                <a><img src="assests/images/account.png" alt="account-info"> </a>
             </div>
         </div>
 
@@ -30,14 +32,18 @@
 
         <!-- Timer -->
         <section class="timer">
-        
+            <div class="settings-cog-container">
+                <button id="settings-cog" class="settings-cog" title="Settings">
+                    <img src="assests/images/settings.png" alt="Settings Icon">
+                </button>
+            </div>
             <!-- timer-labels change in JavaScript -->
              <div class="timer-label-container">
                 <span class="timer-label" id="timer-label">Focus Timer</span>
              </div>
 
             <!-- timer dispay needs to be updated through JavaScript -->
-            <div class="timer-display" id="timer">25:00</div>
+            <div class="timer-display" id="timer">  :  </div>
 
             <!-- timer controls need to be linked to JavaScript functions -->
             <div class="timer-controls">
@@ -45,6 +51,10 @@
                 <button id="pause" class="btn">Pause</button>
                 <button id="reset" class="btn">Reset</button>
             </div>
+
+
+
+
         </section>
 
 

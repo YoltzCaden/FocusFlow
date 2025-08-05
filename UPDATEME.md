@@ -1,24 +1,30 @@
-** This will be updated as I go along the project and get ideas.
+**Project Overview:**  
+This file serves as a changelog and feature roadmap for the FocusFlow application. It documents the current features, planned updates, and ideas for future enhancements as the project evolves.
 
 
-Version 1: Pomodoro Timer
+**Version 1: Pomodoro Timer**
+FocusFlow is a Pomodoro Timer application that helps you manage your time effectively by breaking work into intervals, traditionally 25 minutes in length, separated by short breaks.
 
-- Simple HTML & CSS design 
-- Simple JavaScript
+- This version includes a basic Pomodoro Timer functionality.
+- The timer starts at 25 minutes and counts down to 0.
+- Once the timer reaches 0, it switches to a break timer for 5 minutes.
+- The timer can be reset to start a new Pomodoro session.
+- The timer display is updated in real-time as the countdown progresses.
+- The timer can be paused and resumed.
+- The timer can be reset to the initial 25 minutes.
+- The timer can be edited to change the duration of focus and break sessions.
 
-The pomodoro timer goes through Focus Sessions which last 25 mins each, 
-and a 5 min break between each session.
-This continues until you stop the timer.
-
-There will be a functionality that will allow you to edit the time frame to your suitable liking, but currently it is fixed in the code.
+**Account icon:**
+- The account icon is a placeholder for future user account features.
 
 
-Version 2: + Todo List
+**Version 2: + Todo List**
 
-Version 3: + Spotify Player
+**Version 3: + Spotify Player**
 
-Feature Ideas:
-Pomodoro Timer
+**Version 4: + Activity Centre**
+
+**Additional Feature Ideas:**
 Native Todo List 
     - Views 
         - List 
@@ -32,3 +38,4 @@ Music Integration
 
 Activity Centre
 - Tracks Pomodoro sessions and provides insight on focused time.
+

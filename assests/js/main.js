@@ -1,43 +1,45 @@
 const start = document.getElementById("start");
 const pause = document.getElementById("pause");
 const reset = document.getElementById("reset");
-let focus_timer = 1500; // Time in seconds
-let break_timer = 300; //Short breaks - 5 minutes;
-let long_break_timer = 1800; // Longer breaks - 45 minutes;
-let remaining_time = focus_timer + 1;  // helps make sure the Timer starts that required time.
-let timer_running = false; 
+let focusDuration = 10; // Time in seconds
+let shortBreakDuration = 5; // Short breaks - 5 minutes
+let longBreakDuration = 8; // Longer breaks - 45 minutes
+let remainingTime = focusDuration;  // helps make sure the Timer starts that required time.
+let timerRunning = false; 
 let currentMode = 'focus';
 let focusSessionsCompleted = 0;
-let intervalID = null; 
+let intervalId = null; 
 
 
 // Timer Functionality
 
+
+displayTimer = function() {
+    let minutes = Math.floor(remainingTime / 60);
+    let seconds = remainingTime % 60;
+
+    // Add leading zeros for single digit numbers
+    if (minutes < 10) {
+        minutes = "0" + minutes;
+    }
+    if (seconds < 10) {
+        seconds = "0" + seconds;
+    }
+
+    document.getElementById("timer").textContent = `${minutes}:${seconds}`;
+    
+}
+
 /*
-countDownTimer
-
-WWW:
-    + Timer updates on website
-    + Start button works
-    + Label switch from Focus Timer to Break Timer
-    + Single digit numbers take 2 column only with placeholder zeros. E.g. 1: 8  is displayed as 01:08
-    + Switches from Focus to Break well
-    + Switches from 4 Focus Session to Longer Break Session
-
-EBI:
-
-    - Edit the timer for personal suitability;
-    -
+* countDownTimer
+* This function is called every second to update the timer.
+* It checks if the timer has reached zero
 
 */
 
 countDownTimer = function() {
-        timer_running = true;
-        remaining_time = remaining_time - 1;
-        minutes = Math.floor(remaining_time/60);
-        seconds = remaining_time % 60;
+        timerRunning = true;
 
-        document.getElementById("timer").textContent = String(minutes).padStart(2,'0') + ":" + String(seconds).padStart(2,'0');
 
         /*
         * 1. Timer = 00:00
@@ -50,7 +52,7 @@ countDownTimer = function() {
         */
 
 
-        if (remaining_time <= 0) {
+        if (remainingTime <= 0) {
             if (currentMode == 'focus') {
                 focusSessionsCompleted += 1;
 
@@ -61,22 +63,25 @@ countDownTimer = function() {
                 */
                 
                 if (focusSessionsCompleted % 4 == 0) {
-                    remaining_time = long_break_timer;
+                    remainingTime = longBreakDuration;
                     currentMode = 'break';
                     document.getElementById("timer-label").textContent = "Longer Break Timer"
                 } else {
-                    remaining_time = break_timer;
+                    remainingTime = shortBreakDuration;
                     currentMode = 'break';
                     document.getElementById("timer-label").textContent = "Break Timer";
                 }
 
             } else if (currentMode == 'break') {
-                remaining_time = focus_timer;
+                remainingTime = focusDuration;
                 currentMode = 'focus';
                 document.getElementById("timer-label").textContent = "Focus Timer";
             }
 
+        } else {
+            remainingTime -= 1;
         }
+        displayTimer();
 }
 
 // Button Functionality
@@ -90,8 +95,8 @@ countDownTimer = function() {
 */
 
 startClick = function() {
-    if (timer_running == false) {
-        intervalID = setInterval(countDownTimer, 1000);
+    if (timerRunning == false) {
+        intervalId = setInterval(countDownTimer, 1000);
     }
     
 
@@ -108,9 +113,9 @@ start.addEventListener('click', startClick);
 */
 
 pauseClick = function() {
-    if (timer_running == true) {
-        clearInterval(intervalID);
-        timer_running = false;
+    if (timerRunning == true) {
+        clearInterval(intervalId);
+        timerRunning = false;
     }
     
     
@@ -129,12 +134,16 @@ pause.addEventListener('click', pauseClick);
 */
 resetClick = function() {
     pauseClick();
-    remaining_time = focus_timer + 1;
+    remainingTime = focusDuration + 1;
     currentMode = 'focus';
     document.getElementById("timer-label").textContent = "Focus Timer";
-    countDownTimer();
-    timer_running = false;
+    displayTimer();
+    timerRunning = false;
     
 }
 
 reset.addEventListener('click', resetClick);
+
+// Initial display of the timer
+displayTimer(); // Show timer immediately on page load
+// --- IGNORE ---
