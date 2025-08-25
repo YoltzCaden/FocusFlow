@@ -1,9 +1,9 @@
 const start = document.getElementById("start");
 const pause = document.getElementById("pause");
 const reset = document.getElementById("reset");
-let focusDuration = 10; // Time in seconds
-let shortBreakDuration = 5; // Short breaks - 5 minutes
-let longBreakDuration = 8; // Longer breaks - 45 minutes
+let focusDuration = 1500; // Time in seconds
+let shortBreakDuration = 300; // Short breaks - 5 minutes
+let longBreakDuration = 900; // Longer breaks - 15 minutes
 let remainingTime = focusDuration;  // helps make sure the Timer starts that required time.
 let timerRunning = false; 
 let currentMode = 'focus';
