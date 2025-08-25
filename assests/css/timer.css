@@ -1,0 +1,155 @@
+@import url(/assests/css/main.css);
+
+/* Styling Timer */
+ 
+
+.timer-container {
+    /* Layout & Positioning */
+    display: flex;
+    flex-direction: column;
+
+    /* Box Model */
+    gap: clamp(0.8rem, 2vw, 1.5rem);
+    padding: 5rem;
+    border-radius: 2rem;
+    width: 750px;
+    height: 610px;
+    margin: 0 auto;
+    box-sizing: border-box;
+
+    /* Appearance */
+    background-color: #4379FF;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+    border-radius: 220px;
+}
+
+
+/* Timer Header  */
+.timer-header {
+    /* Layout & Positioning */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12%;
+
+
+    /* Box Model */
+    width: 100%;
+    margin-top: 0;
+}
+
+.timer-label {
+
+    /* Layout & Positioning */
+    display: flex;
+
+    /* Box Model */
+    border-radius: 2rem;
+    padding: 1.5rem;
+
+
+
+    /* Appearance */
+    font-weight: 800;
+    font-size: clamp(3rem, 2vw, 4rem);
+    /* Small space before icon */
+    background-color: #BCCFFF;
+}
+
+.settings-icon {
+    /* Layout & Positioning */
+    display: flex;
+    
+
+    /* Box Model */
+    width: clamp(4.5rem, 5vw, 5rem);
+    height: clamp(4.5rem, 5vw, 5rem);
+    border-radius: 50%;
+    margin-right: 1rem;
+
+
+    /* Appearance */
+    background-color: #BCCFFF;
+    cursor: pointer;
+    object-fit: contain;
+}
+
+
+/* Time Display */
+
+.timer-display {
+    /* Layout & Positioning */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    /* Box Model */
+
+    width: clamp(300px, 15vw, 600px);
+    height: clamp(15px, 30vh, 215px);
+    margin: 0 auto;
+
+
+    /* Appearance */
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+
+    border-radius: 58.5px;
+    background-color: #90b3ff;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.25);
+    font-size: clamp(5rem, 8vw, 6rem);
+
+}
+
+
+/* Button Controls */
+
+.timer-controls {
+    /* Layout & Positioning */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    /* Box Model */
+    padding: 1rem;
+    border-radius: 58.5px;
+
+    /* Appearance */
+    background-color: #001E6B;
+
+
+
+}
+
+.timer-btn {
+    /* Layout & Positioning */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    /* Box Model */
+    width: 8.3rem;
+    height: 6.2rem;
+    gap: 1rem;
+
+    /* Appearance */
+    background-color: #AFC6FF;
+    font-weight: 500;
+    font-family: 'Itim', sans-serif;
+    font-size: clamp(1.5rem, 2vw, 2rem);
+    transition: background 0.3s;
+    border: none;
+    cursor: pointer;
+    color: #001E6B;
+    border-radius: 44px
+
+}
+
+.timer-btn:hover {
+    background-color: #8daef7;
+    color: white;
+
+}

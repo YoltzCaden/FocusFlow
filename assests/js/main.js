@@ -9,7 +9,7 @@ let timerRunning = false;
 let currentMode = 'focus';
 let focusSessionsCompleted = 0;
 let intervalId = null; 
-
+var audio = new Audio('assests/audio/time-up.mp3');
 
 // Timer Functionality
 
@@ -52,7 +52,8 @@ countDownTimer = function() {
         */
 
 
-        if (remainingTime <= 0) {
+        if (remainingTime == 0) {
+            timeUp(); // Alert the user that time is up. Plays a sound.
             if (currentMode == 'focus') {
                 focusSessionsCompleted += 1;
 
@@ -134,7 +135,7 @@ pause.addEventListener('click', pauseClick);
 */
 resetClick = function() {
     pauseClick();
-    remainingTime = focusDuration + 1;
+    remainingTime = focusDuration;
     currentMode = 'focus';
     document.getElementById("timer-label").textContent = "Focus Timer";
     displayTimer();
@@ -147,3 +148,17 @@ reset.addEventListener('click', resetClick);
 // Initial display of the timer
 displayTimer(); // Show timer immediately on page load
 // --- IGNORE ---
+
+// Time's Up
+timeUp = function() {
+    clearInterval(intervalId);
+    timerRunning = false;
+    audio.play();
+    if (currentMode  == 'focus') {
+        alert("Time to take a break!");  // Plays after a focus session
+    } else if (currentMode == 'break' || currentMode == 'long-break') {
+        alert("Time to get back to work!");  // Plays after a break session
+    }
+    startClick();
+
+}

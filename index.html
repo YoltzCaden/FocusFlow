@@ -4,25 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FocusFlow</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Italiana&family=Itim&display=swap" rel="stylesheet">
+
+    <!-- CSS Stylesheets -->
     <link rel="stylesheet" href="assests/css/main.css">
-    <link rel="images" href="assests/images/account.png">
-    <link rel="images" href="assests/images/favicon.png">
+    <link rel="stylesheet" href="assests/css/timer.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assests/images/flow-icon.png">
+
 </head>
 <body>
     <!-- Header -->
      <header>
-        <div class="logo-container">
-           <!-- <img src="assests/images/favicon.png" alt="FocusFlow Logo" class="logo"> -->
+        <div class="logo">
+           <img class="logo" src="assests/images/flow-icon.png" alt="FocusFlow Logo">
         </div>
+
         <div class="title-container">
             <h1>FocusFlow</h1>
             <p>Let's get you in the Flow!</p>
         </div>
 
+
         <div class="account-container">
-            <div class="account-info">
-                <a><img src="assests/images/account.png" alt="account-info"> </a>
-            </div>
+            <img class = "profile" src="assests/images/account.png" alt="profile">
         </div>
 
      </header>
@@ -30,16 +39,14 @@
      <!-- Main Section -->
      <main>
 
-        <!-- Timer -->
-        <section class="timer">
-            <div class="settings-cog-container">
-                <button id="settings-cog" class="settings-cog" title="Settings">
-                    <img src="assests/images/settings.png" alt="Settings Icon">
-                </button>
-            </div>
+        <!-- Timer Section -->
+        <section class="timer-container">
             <!-- timer-labels change in JavaScript -->
-             <div class="timer-label-container">
+             <div class="timer-header">
                 <span class="timer-label" id="timer-label">Focus Timer</span>
+
+                <img class="settings-icon" src="assests/images/settings.png" alt="settings-icon">
+
              </div>
 
             <!-- timer dispay needs to be updated through JavaScript -->
@@ -47,14 +54,10 @@
 
             <!-- timer controls need to be linked to JavaScript functions -->
             <div class="timer-controls">
-                <button id="start" class="btn">Start</button>
-                <button id="pause" class="btn">Pause</button>
-                <button id="reset" class="btn">Reset</button>
+                <button id="start" class="timer-btn">Start</button>
+                <button id="pause" class="timer-btn">Pause</button>
+                <button id="reset" class="timer-btn">Reset</button>
             </div>
-
-
-
-
         </section>
 
 
